@@ -1,0 +1,349 @@
+:root {
+  --color-brand--1: #ffb545;
+  --color-brand--2: #00c46a;
+
+  --color-dark--1: #2d3439;
+  --color-dark--2: #42484d;
+  --color-light--1: #aaa;
+  --color-light--2: #ececec;
+  --color-light--3: rgb(214, 222, 224);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  color: var(--color-light--2);
+  font-weight: 400;
+  line-height: 1.6;
+  height: 100vh;
+  overscroll-behavior-y: none;
+
+  background-color: #fff;
+  padding: 2.5rem;
+
+  display: flex;
+
+  position: relative;
+}
+
+/* GENERAL */
+a:link,
+a:visited {
+  color: var(--color-brand--1);
+}
+
+.menu{
+  background-color: var(--color-light--2);
+  color: var(--color-dark--2);
+  width: 4rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.2rem;
+  cursor: pointer;
+  
+  position: absolute;
+  top: 4.75%;
+  right: 2%;
+  transform: translateX(-40%);
+}
+
+/* SIDEBAR */
+.sidebar {
+  flex-basis: 50%;
+  background-color: var(--color-dark--1);
+  padding: 3rem 5rem 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  height: 5.2rem;
+  align-self: center;
+  margin-bottom: 4rem;
+}
+
+.workouts {
+  list-style: none;
+  height: 77vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.workouts::-webkit-scrollbar {
+  width: 0;
+}
+
+.workout {
+  background-color: var(--color-dark--2);
+  border-radius: 5px;
+  padding: 1.5rem 2.25rem;
+  margin-bottom: 1.75rem;
+  cursor: pointer;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0.75rem 1.5rem;
+}
+.workout--running {
+  border-left: 5px solid var(--color-brand--2);
+}
+.workout--cycling {
+  border-left: 5px solid var(--color-brand--1);
+}
+
+.workout__title {
+  font-size: 1.7rem;
+  font-weight: 600;
+  grid-column: 1 / 4;
+}
+
+.workout__actions{
+  width: 100%;
+  grid-column: 4;
+  display: flex;
+  justify-self: flex-end;
+  justify-content: space-evenly;
+}
+.workout__actions span{
+  padding: 0.4rem;
+}
+
+.workout__details {
+  display: flex;
+  align-items: baseline;
+}
+
+.workout__icon {
+  font-size: 1.8rem;
+  margin-right: 0.2rem;
+  height: 0.28rem;
+}
+
+.workout__value {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.workout__unit {
+  font-size: 1.1rem;
+  color: var(--color-light--1);
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.form {
+  background-color: var(--color-dark--2);
+  border-radius: 5px;
+  padding: 1.5rem 2.75rem;
+  margin-bottom: 1.75rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 2.5rem;
+
+  /* Match height and activity boxes */
+  max-height: auto;
+  transition: all 0.5s, transform 1ms;
+}
+
+.form.hidden {
+  transform: translateY(-30rem);
+  height: 0;
+  padding: 0 2.25rem;
+  margin-bottom: 0;
+  opacity: 0;
+  transition: all 0.7s;
+}
+
+.form__row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.form__row--hidden {
+  display: none;
+}
+
+.form__label {
+  flex: 0 0 50%;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0.3rem 1.1rem;
+  font-family: inherit;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-light--3);
+  transition: all 0.2s;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: #fff;
+}
+
+.form__btn-box{
+  grid-column: 1/-1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.form__btn {
+  width: auto;
+  padding: 0.3rem 0.4rem;
+  border: none;
+  border-radius: 2px;
+  font-size: inherit;
+  background-color: var(--color-light--3);
+  color: var(--color-dark--1);
+  cursor: pointer;
+}
+
+.footer {
+  font-size: 1.8rem;
+  color: var(--color-light--1);
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.delete__all{
+  cursor: pointer;
+}
+.delete__all:hover{
+  text-decoration: line-through;
+}
+
+/* MAP */
+#map {
+  flex: 1;
+  height: 100%;
+  background-color: var(--color-light--1);
+}
+
+/* Popup width is defined in JS using options */
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: var(--color-dark--1);
+  color: var(--color-light--2);
+  border-radius: 5px;
+  padding-right: 0.6rem;
+}
+
+.leaflet-popup .leaflet-popup-content {
+  font-size: 1.5rem;
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background-color: var(--color-dark--1);
+}
+
+.running-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--color-brand--2);
+}
+.cycling-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--color-brand--1);
+}
+
+
+.overlay{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  filter: blur(5px);
+  background-color: #2d3439bb;
+}
+
+.modal{
+  background-color: #fff;
+  z-index: 1001;
+  position: fixed;
+  width: 40rem;
+  height: 25rem;
+  align-self: center;
+  left: 50%;
+  right: 50%;
+  /* top: 50%; */
+  transform: translateX(-50%);
+  border-radius: 8px;
+}
+.modal__content{
+  padding: 2.4rem 4.8rem;
+  /* display: flex; */
+  /* flex-direction: column; */
+  text-align: center;
+}
+.modal__title{
+  font-size: 2rem;
+  color: #2d3439;
+  margin: 3.2rem 0;
+}
+.modal__btn{
+  margin: 1.2rem;
+  width: 7rem;
+  height: 3.2rem;
+  border-radius: 6px;
+  font-size: 1.6rem;
+  border: none;
+  padding: 0.3rem 0.4rem;
+  cursor: pointer;
+}
+.modal__btn-ok{
+  background-color: #2d3439;
+  color: var(--color-light--1);
+}
+.modal__btn-close{
+  background-color: #aaa;
+  border: 0.2rem;
+}
+
+
+@media screen and (max-width : 600px){
+  html {
+    font-size: 40.5%;
+    box-sizing: border-box;
+  }
+
+  body{
+    flex-direction: column;
+    padding: 1.6rem;
+  }
+
+
+  .logo{
+    height: 4rem;
+  }
+
+  .sidebar{
+    padding-top: 2rem;
+    flex-basis: 0%;
+    height: 10%;
+    transition: all 0.3s ease-in;
+  }
+  .show{
+    height: 70%;
+  }
+
+  #map{
+    height: 70%;
+    width: 100%;
+  }
+}
