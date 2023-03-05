@@ -11,22 +11,38 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
 
     <!-- Javascript link -->
     <link rel="stylesheet" href="style.css" />
 
     <!-- Leaflet CDN -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
-    <script defer src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
-    
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.1/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js"
+      integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s="
+      crossorigin=""
+    ></script>
+
     <!-- Javascript link -->
     <script defer src="script.js"></script>
     <title>mapty // Map your workouts</title>
   </head>
   <body>
-    <div class="menu open">=</div>
     <div class="sidebar">
-      <img src="logo.png" alt="Logo" class="logo" />
+      <nav class="nav">
+        <img src="logo.png" alt="Logo" class="logo" />
+        <div class="menu open">=</div>
+      </nav>
 
       <ul class="workouts">
         <form class="form hidden">
@@ -131,6 +147,15 @@
     </div>
 
     <div id="map"></div>
+
+    <!-- IONICON CDN -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </body>
-  
 </html>

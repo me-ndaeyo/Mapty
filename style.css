@@ -42,23 +42,6 @@ a:visited {
   color: var(--color-brand--1);
 }
 
-.menu{
-  background-color: var(--color-light--2);
-  color: var(--color-dark--2);
-  width: 4rem;
-  height: 3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3.2rem;
-  cursor: pointer;
-  
-  position: absolute;
-  top: 4.75%;
-  right: 2%;
-  transform: translateX(-40%);
-}
-
 /* SIDEBAR */
 .sidebar {
   flex-basis: 50%;
@@ -68,10 +51,21 @@ a:visited {
   flex-direction: column;
 }
 
+nav.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-block-end: 2.4rem;
+  height: 4.8rem;
+}
+
+nav .menu{
+  display: none;
+}
+
 .logo {
   height: 5.2rem;
-  align-self: center;
-  margin-bottom: 4rem;
 }
 
 .workouts {
@@ -79,6 +73,7 @@ a:visited {
   height: 77vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  margin-block-end: 1.2rem;
 }
 
 .workouts::-webkit-scrollbar {
@@ -89,7 +84,7 @@ a:visited {
   background-color: var(--color-dark--2);
   border-radius: 5px;
   padding: 1.5rem 2.25rem;
-  margin-bottom: 1.75rem;
+  margin-block-end: 1.75rem;
   cursor: pointer;
 
   display: grid;
@@ -109,15 +104,16 @@ a:visited {
   grid-column: 1 / 4;
 }
 
-.workout__actions{
+.workout__actions {
   width: 100%;
   grid-column: 4;
   display: flex;
   justify-self: flex-end;
   justify-content: space-evenly;
 }
-.workout__actions span{
+.workout__actions span {
   padding: 0.4rem;
+  font-size: 1.4rem;
 }
 
 .workout__details {
@@ -199,7 +195,7 @@ a:visited {
   background-color: #fff;
 }
 
-.form__btn-box{
+.form__btn-box {
   grid-column: 1/-1;
   display: flex;
   align-items: center;
@@ -225,10 +221,10 @@ a:visited {
   align-self: center;
 }
 
-.delete__all{
+.delete__all {
   cursor: pointer;
 }
-.delete__all:hover{
+.delete__all:hover {
   text-decoration: line-through;
 }
 
@@ -253,6 +249,7 @@ a:visited {
 
 .leaflet-popup .leaflet-popup-tip {
   background-color: var(--color-dark--1);
+  width: fit-content;
 }
 
 .running-popup .leaflet-popup-content-wrapper {
@@ -262,8 +259,7 @@ a:visited {
   border-left: 5px solid var(--color-brand--1);
 }
 
-
-.overlay{
+.overlay {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -272,7 +268,7 @@ a:visited {
   background-color: #2d3439bb;
 }
 
-.modal{
+.modal {
   background-color: #fff;
   z-index: 1001;
   position: fixed;
@@ -280,23 +276,23 @@ a:visited {
   height: 25rem;
   align-self: center;
   left: 50%;
-  right: 50%;
-  /* top: 50%; */
-  transform: translateX(-50%);
+  /* right: 50%; */
+  top: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 8px;
 }
-.modal__content{
+.modal__content {
   padding: 2.4rem 4.8rem;
   /* display: flex; */
   /* flex-direction: column; */
   text-align: center;
 }
-.modal__title{
+.modal__title {
   font-size: 2rem;
   color: #2d3439;
   margin: 3.2rem 0;
 }
-.modal__btn{
+.modal__btn {
   margin: 1.2rem;
   width: 7rem;
   height: 3.2rem;
@@ -306,44 +302,63 @@ a:visited {
   padding: 0.3rem 0.4rem;
   cursor: pointer;
 }
-.modal__btn-ok{
+.modal__btn-ok {
   background-color: #2d3439;
   color: var(--color-light--1);
 }
-.modal__btn-close{
+.modal__btn-close {
   background-color: #aaa;
   border: 0.2rem;
 }
 
-
-@media screen and (max-width : 600px){
+@media screen and (max-width: 600px) {
   html {
-    font-size: 40.5%;
+    font-size: 47.5%;
     box-sizing: border-box;
   }
 
-  body{
-    flex-direction: column;
+  body {
+    flex-direction: column-reverse;
     padding: 1.6rem;
   }
 
-
-  .logo{
+  .logo {
     height: 4rem;
   }
 
-  .sidebar{
+  nav .menu {
+    background-color: var(--color-light--2);
+    color: var(--color-dark--2);
+    width: 4rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .sidebar {
+    position: relative;
     padding-top: 2rem;
     flex-basis: 0%;
     height: 10%;
-    transition: all 0.3s ease-in;
+    transition: all 0.5s ease-in;
+    border-radius: 16px 16px 0 0;
   }
-  .show{
+
+  nav.nav{
+    padding-block: 1.6rem;
+    margin-block-end: 4rem;
+  }
+
+  .show {
     height: 70%;
   }
 
-  #map{
-    height: 70%;
+  #map {
+    position: fixed;
     width: 100%;
   }
 }

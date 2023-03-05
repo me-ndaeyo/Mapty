@@ -343,7 +343,7 @@ class App {
         .addTo(this.#map)
         .bindPopup(
           L.popup({
-            maxWidth: 250,
+            width: 300,
             minWidth: 100,
             autoClose: false,
             closePopupOnClick: false,
@@ -367,8 +367,8 @@ class App {
         <li class="workout workout--${workout.type}" data-id="${workout.id}">
           <h2 class="workout__title">${workout.description}</h2>
           <div class="workout__actions">
-            <span class="workout__edit">edit</span>
-            <span class="workout__delete">delete</span>
+            <span class="material-symbols-outlined workout__edit">edit</span>
+            <span class="material-symbols-outlined workout__delete">delete</span>
           </div>
           <div class="workout__details" data-id="distance">
             <span class="workout__icon">${
@@ -441,18 +441,14 @@ class App {
 
   _getLocalStorage() {
     let data = JSON.parse(localStorage.getItem('workouts'));
-    console.log(data);
+    // Guard clause
+    if(data === null || data === undefined) return null;
     // Loop over the object
     for (const [key, val] of Object.entries(data)) {
-      let workout;
-
-      // Create new objects based on the data given and push to the data array
+      // Enable prototypal inheritance for objects gotten from local storage
       if (val.type === 'running') val.__proto__ = Running.prototype
       if (val.type === 'cycling')val.__proto__ = Cycling.prototype
     }
-    // Guard clause
-    if (!data) return;
-        console.log(data)
     // Render workout array elements to the UI
     this.#workouts = data;
     this.#workouts.forEach(work => this._renderWorkout.call(this, work));
