@@ -358,7 +358,7 @@ nav .menu{
   }
 
   #map {
-    position: fixed;
+    height:70%;
     width: 100%;
   }
 }
