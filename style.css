@@ -12,12 +12,11 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
 }
 
 body {
@@ -25,10 +24,10 @@ body {
   color: var(--color-light--2);
   font-weight: 400;
   line-height: 1.6;
-  height: 100vmax;
+  height: 100vh;
   width: 100%;
-  /* overflow-y: hidden; */
-  /* overscroll-behavior-y: none; */
+  overflow-y: hidden;
+  overscroll-behavior-y: none;
 
   background-color: #fff;
   padding: 1.4rem;
@@ -46,7 +45,8 @@ a:visited {
 
 /* SIDEBAR */
 .sidebar {
-  flex-basis: 50%;
+  /* flex-basis: 50%; */
+  width: 50%;
   background-color: var(--color-dark--1);
   padding: 3rem 5rem 4rem 5rem;
   display: flex;
@@ -313,13 +313,12 @@ nav .menu{
 @media screen and (max-width: 37.5em) {
   html {
     font-size: 47.5%;
-    /* box-sizing: border-box; */
   }
 
   body {
     flex-direction: column-reverse;
-    padding: 0.8rem;
-    overflow-y: hidden;
+    padding: 0;
+    position: relative;
   }
 
   .logo {
@@ -342,9 +341,15 @@ nav .menu{
   .sidebar {
     border-radius: 16px 16px 0 0;
     padding: 1.8rem 1.6rem 2.4rem;
-    height: 8rem;
+    position: absolute;
+    z-index: 5000;
+    transform: translateY(85%);
     transition: all 0.5s ease-in;
-    flex-basis: 0%;
+    width: inherit;
+  }
+
+  .workouts{
+    height: 42vh;
   }
 
   nav.nav{
@@ -353,7 +358,7 @@ nav .menu{
   }
 
   .sidebar.show {
-    height: 70%;
+    transform: translateY(0%);
   }
 
   .footer{
@@ -361,7 +366,7 @@ nav .menu{
   }
 
   #map {
-    height:70%;
+    /* height:70%; */
     width: 100%;
   }
 }
