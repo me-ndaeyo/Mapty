@@ -319,6 +319,7 @@ nav .menu{
     flex-direction: column-reverse;
     padding: 0;
     position: relative;
+    height: 96.5vh;
   }
 
   .logo {
