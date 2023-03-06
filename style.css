@@ -25,7 +25,7 @@ body {
   color: var(--color-light--2);
   font-weight: 400;
   line-height: 1.6;
-  height: 100vh;
+  height: 100vmax;
   width: 100%;
   /* overflow-y: hidden; */
   /* overscroll-behavior-y: none; */
@@ -342,7 +342,7 @@ nav .menu{
   .sidebar {
     border-radius: 16px 16px 0 0;
     padding: 1.8rem 1.6rem 2.4rem;
-    height: 7.2rem;
+    height: 8rem;
     transition: all 0.5s ease-in;
     flex-basis: 0%;
   }
