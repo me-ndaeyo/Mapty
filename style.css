@@ -26,10 +26,12 @@ body {
   font-weight: 400;
   line-height: 1.6;
   height: 100vh;
+  width: 100%;
+  overflow-y: hidden;
   overscroll-behavior-y: none;
 
   background-color: #fff;
-  padding: 2.5rem;
+  padding: 1.4rem;
 
   display: flex;
 
@@ -276,15 +278,12 @@ nav .menu{
   height: 25rem;
   align-self: center;
   left: 50%;
-  /* right: 50%; */
   top: 50%;
   transform: translate(-50%, -50%);
   border-radius: 8px;
 }
 .modal__content {
   padding: 2.4rem 4.8rem;
-  /* display: flex; */
-  /* flex-direction: column; */
   text-align: center;
 }
 .modal__title {
@@ -311,15 +310,16 @@ nav .menu{
   border: 0.2rem;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5em) {
   html {
     font-size: 47.5%;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
   }
 
   body {
     flex-direction: column-reverse;
-    padding: 1.6rem;
+    padding: 0.8rem;
+    /* height: 100%; */
   }
 
   .logo {
@@ -340,12 +340,11 @@ nav .menu{
   }
 
   .sidebar {
-    position: relative;
-    padding-top: 2rem;
-    flex-basis: 0%;
-    height: 10%;
-    transition: all 0.5s ease-in;
     border-radius: 16px 16px 0 0;
+    padding: 1.8rem 3rem 2.4rem;
+    height: 7.2rem;
+    transition: all 0.5s ease-in;
+    flex-basis: 0%;
   }
 
   nav.nav{
@@ -353,8 +352,12 @@ nav .menu{
     margin-block-end: 4rem;
   }
 
-  .show {
+  .sidebar.show {
     height: 70%;
+  }
+
+  .footer{
+    height: auto;
   }
 
   #map {
