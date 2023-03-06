@@ -319,6 +319,7 @@ nav .menu{
     flex-direction: column-reverse;
     padding: 0;
     position: relative;
+    height: 98vh;
   }
 
   .logo {
@@ -326,16 +327,21 @@ nav .menu{
   }
 
   nav .menu {
-    background-color: var(--color-light--2);
+    background-color: var(--color-light--1);
     color: var(--color-dark--2);
     width: 4rem;
-    height: 3rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3.2rem;
     border-radius: 4px;
     cursor: pointer;
+
+    position: absolute;
+    top: -1.5rem;
+    right: 50%;
+    transform: translate(1.5rem, -10%);
   }
 
   .sidebar {
@@ -349,12 +355,12 @@ nav .menu{
   }
 
   .workouts{
-    height: 42vh;
+    height: 42vh; 
   }
 
   nav.nav{
     padding-block: 1.6rem;
-    margin-block-end: 4rem;
+    margin-block: 1.2rem 4rem;
   }
 
   .sidebar.show {
