@@ -27,8 +27,8 @@ body {
   line-height: 1.6;
   height: 100vh;
   width: 100%;
-  overflow-y: hidden;
-  overscroll-behavior-y: none;
+  /* overflow-y: hidden; */
+  /* overscroll-behavior-y: none; */
 
   background-color: #fff;
   padding: 1.4rem;
@@ -319,7 +319,7 @@ nav .menu{
   body {
     flex-direction: column-reverse;
     padding: 0.8rem;
-    /* height: 100%; */
+    overflow-y: hidden;
   }
 
   .logo {
